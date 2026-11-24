@@ -1,0 +1,270 @@
+
+.reports-page {
+  padding: 25px;
+  color: #263248;
+}
+
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.reports-header h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+}
+
+.reports-header p {
+  color: #788397;
+  margin: 0;
+}
+
+.reports-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.reports-print-btn,
+.reports-export-btn {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reports-print-btn {
+  background: #eef2f7;
+  color: #334155;
+}
+
+.reports-export-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.reports-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.report-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.report-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #788397;
+  font-size: 13px;
+}
+
+.report-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.report-icon.blue {
+  background: #e8efff;
+}
+
+.report-icon.green {
+  background: #e3f8ed;
+}
+
+.report-icon.orange {
+  background: #fff1df;
+}
+
+.report-icon.purple {
+  background: #f0eaff;
+}
+
+.report-card h2 {
+  font-size: 28px;
+  margin: 15px 0 8px;
+}
+
+.report-positive,
+.report-neutral {
+  margin: 0;
+  font-size: 12px;
+}
+
+.report-positive {
+  color: #16a36a;
+}
+
+.report-neutral {
+  color: #d97706;
+}
+
+/* Chart cards */
+
+.reports-chart-card,
+.reports-table-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 22px;
+  min-width: 0;
+}
+
+.reports-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.reports-section-heading h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+
+.reports-section-heading p {
+  margin: 0;
+  color: #788397;
+  font-size: 13px;
+}
+
+.reports-section-heading select {
+  padding: 10px;
+  border: 1px solid #dce2eb;
+  border-radius: 7px;
+  background: white;
+}
+
+.reports-chart {
+  height: 300px;
+  width: 100%;
+  min-width: 0;
+}
+
+.pie-chart {
+  height: 300px;
+}
+
+/* Two-column charts */
+
+.reports-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Department table */
+
+.reports-table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.reports-table-card .reports-section-heading {
+  padding: 22px 22px 0;
+}
+
+.reports-table-scroll {
+  overflow-x: auto;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.reports-table th,
+.reports-table td {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 13px;
+}
+
+.reports-table th {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.department-active {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Responsive design */
+
+@media (max-width: 1000px) {
+  .reports-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reports-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .reports-page {
+    padding: 15px;
+  }
+
+  .reports-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reports-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .reports-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reports-chart {
+    height: 260px;
+  }
+}
+
+@media print {
+  .reports-header-actions {
+    display: none;
+  }
+
+  .reports-page {
+    padding: 0;
+  }
+
+  .reports-chart-card,
+  .report-card,
+  .reports-table-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
